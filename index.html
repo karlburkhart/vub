@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/imageviewer/dist/viewer.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+        <script src="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
+        <script src="https://cdn.klokantech.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+        <link rel="stylesheet" href="https://cdn.klokantech.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" />
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./vendor/imageviewer/dist/viewer.css" type="text/css"/>
+        <link rel="stylesheet" href="vendor/gesturehandler/dist/leaflet-gesture-handling.min.css" type="text/css">
+
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+      	<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+
+        <link href="css/style.css" rel="stylesheet">
+
+        <title>Visualising the unknown Balkans</title>
+    </head>
+    <body>
+
+      <!-- Navigation -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+          <a class="navbar-brand" href="index.html"><span>V</span>uB</a>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" style="color:white;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About The Project</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Areas
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                  <a class="dropdown-item" href="site01.html">First farmers and herders in Leskovac region</a>
+                  <a class="dropdown-item" href="site02.html">Bubanj and the rising of Copper Age central places</a>
+                  <a class="dropdown-item" href="site03.html">Bronze Age Metallurgy in East Serbia</a>
+                  <a class="dropdown-item" href="site04.html">Late Bronze Age communities in Bosnia</a>
+                  <a class="dropdown-item" href="site05.html">Prehistoric Burial Tumuli</a>
+                </div>
+              </li>
+              <!--<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Media
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                  <a class="dropdown-item" href="video.html">Videos</a>
+                  <a class="dropdown-item" href="reconstruction.html">Reconstructions</a>
+                  <a class="dropdown-item" href="photo.html">Photos</a>
+                  <a class="dropdown-item" href="literature.html">Literature</a>
+                </div>
+              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="container">
+        <div id="map">
+        </div>
+        <h1 class="my-4" align="center">Visualizing the unknown Balkans</h1>
+        <hr align="center" width="10%">
+
+        <!-- Features Section -->
+        <ul class="images">
+          <div class="row padd-bottom-50">
+            <div class="col-lg-6">
+              <p class="justify">The aim of the Visualizing the unknown Balkans project is turning a spotlight on regions of the Balkans, which are currently under-represented in international archaeology because of the fragmentation of Balkan prehistory in recent decades, through the visualisation of research results of five key areas. OREA researchers and partners from Bosnia and Herzegovina and Serbia present the geographical area from a cross-cultural and diachronic perspective spanning from the Early Neolithic to Late Bronze Age.:</p>
+              <ul>
+                <li>First farmers and herders in Leskovac region</li>
+                <li>Bubanj and the rising of Copper Age central places</li>
+                <li>Bronze Age Metallurgy in East Serbia</li>
+                <li>Late Bronze Age communities in Bosnia</li>
+                <li>Prehistoric Burial Tumuli</li>
+              </ul>
+            </div>
+
+            <div class="col-lg-6">
+              <img originalUrl="./media/index_pusta_reka_main.jpg" src="./media/index_pusta_reka_main.jpg" class="img-responsive gallery-items img-fluid rounded" alt="Topographic survey">
+              <figcaption class="figure-caption text-left">Topographic survey (F. Ostmann, © OREA) </figcaption>
+            </div>
+          </div>
+        </ul>
+        <!-- /.row -->
+
+      </div>
+
+      <footer class="py-5 bg-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <a href="https://www.orea.oeaw.ac.at" target="_blank"><p class="m-0 text-center text-white"><img src="./media/OREA_white.png" width="50%"></p></a>
+            </div>
+            <div class="col-lg-4">
+              <p class="m-0 text-center "><a href="terms.html" class="text-white">Terms of Use</a></p>
+              <p class="m-0 text-center "><a href="imprint.html" class="text-white">Imprint</a></p><br>
+              <p class="m-0 text-center text-white">Copyright &copy; OREA 2018</p>
+            </div>
+            <div class="col-lg-4" style="padding-bottom:0px;">
+              <a href="https://www.oeaw.ac.at" target="_blank"><p class="m-0 text-center text-white"><img src="./media/OEAW_en_Logo_white.png" width="50%"></p></a>
+            </div>
+          </div>
+        </div>
+        <!-- /.container -->
+      </footer>
+
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet-src.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet-tilefilter.js"></script>
+		    <script src="js/leaflet-mapbox-gl.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Casestudyareas_1.js"></script>
+        <script src="data/Casestudysites_2.js"></script>
+        <script src="vendor/gesturehandler/dist/leaflet-gesture-handling.min.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1, gestureHandling: true
+        }).fitBounds([[40.687807283620906,13.383035626188224],[46.17810936417523,27.236475232808022]]);
+
+        map.attributionControl.addAttribution('map by <a href="https://www.orea.oeaw.ac.at/"target="_blank">OREA</a> created with <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> with data from <a href="https://www.orea.oeaw.ac.at/" target="_blank">OREA</a>, <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap Contributors</a>, <a href="https://www.maptiler.com/license/maps/" target="_blank">MapTiler</a> and <a href="https://stamen.com/" target="_blank">Stamen Design</a>. License: CC BY 4.0');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        var overlay_stamenterrain_0 = L.tileLayer('http://stamen-tiles.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.{ext}', {	ext: 'png',
+    opacity: 0.7,
+	    cssFilter: L.ImageFilters.GenerateCSSFilter(['contrast(160%)', 'saturate(0%)', 'brightness(94%)'])
+
+});
+
+        overlay_stamenterrain_0.addTo(map);
+
+        map.addLayer(overlay_stamenterrain_0);
+
+
+      var gl = L.mapboxGL({
+                opacity: 0.4, accessToken: 'not-needed',
+        style: 'https://maps.tilehosting.com/c/e703de17-8037-441a-8610-0d30297d2315/styles/topo/style.json?key=UClSprATG6zsRhetGBJr'
+      }).addTo(map);
+        function pop_Casestudyareas_1(feature, layer) {
+            var popupContent = '<table width="200px">\
+                    <tr>\
+                        <td colspan="2" align="center">' + (feature.properties['Area_title'] !== null ? Autolinker.link(String(feature.properties['Area_title'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2" align="center">' + (feature.properties['Area_page'] !== null ? Autolinker.link(String(feature.properties['Area_page'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Casestudyareas_1_0(feature) {
+            switch(String(feature.properties['q2wHide_Area_no'])) {
+                case '1':
+                    return {
+                pane: 'pane_Casestudyareas_1',
+                opacity: 1,
+                color: 'rgba(128,152,72,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(81,23,48,0.5254901960784314)',
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Casestudyareas_1',
+                opacity: 1,
+                color: 'rgba(114,133,132,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,154,0,0.4980392156862745)',
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Casestudyareas_1',
+                opacity: 1,
+                color: 'rgba(114,133,132,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,96,47,0.5333333333333333)',
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_Casestudyareas_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,101,91,0.5372549019607843)',
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_Casestudyareas_1',
+                opacity: 1,
+                color: 'rgba(114,133,132,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,64,114,0.6078431372549019)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Casestudyareas_1');
+        map.getPane('pane_Casestudyareas_1').style.zIndex = 401;
+        map.getPane('pane_Casestudyareas_1').style['mix-blend-mode'] = 'normal';
+        var layer_Casestudyareas_1 = new L.geoJson(json_Casestudyareas_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Casestudyareas_1',
+            onEachFeature: pop_Casestudyareas_1,
+            style: style_Casestudyareas_1_0,
+        });
+        bounds_group.addLayer(layer_Casestudyareas_1);
+        map.addLayer(layer_Casestudyareas_1);
+        function pop_Casestudysites_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Casestudysites_2_0() {
+            return {
+                pane: 'pane_Casestudysites_2',
+                radius: 2.4,
+                opacity: 1,
+                color: 'rgba(57,57,57,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+            }
+        }
+        map.createPane('pane_Casestudysites_2');
+        map.getPane('pane_Casestudysites_2').style.zIndex = 402;
+        map.getPane('pane_Casestudysites_2').style['mix-blend-mode'] = 'normal';
+        var layer_Casestudysites_2 = new L.geoJson(json_Casestudysites_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Casestudysites_2',
+            onEachFeature: pop_Casestudysites_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Casestudysites_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Casestudysites_2);
+        map.addLayer(layer_Casestudysites_2);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Casestudysites_2.png" /> Case study sites': layer_Casestudysites_2,'Case study areas<br /><table><tr><td style="text-align: center;"><img src="legend/Casestudyareas_1_FirstfarmersandherdersinLeskovacregion0.png" /></td><td>First farmers and herders in Leskovac region</td></tr><tr><td style="text-align: center;"><img src="legend/Casestudyareas_1_BubanjandtherisingofCopperAgecentralplaces1.png" /></td><td>Bubanj and the rising of Copper Age central places</td></tr><tr><td style="text-align: center;"><img src="legend/Casestudyareas_1_BronzeAgeMetallurgyinEastSerbia2.png" /></td><td>Bronze Age Metallurgy in East Serbia</td></tr><tr><td style="text-align: center;"><img src="legend/Casestudyareas_1_LateBronzeAgecommunitiesinBosnia3.png" /></td><td>Late Bronze Age communities in Bosnia</td></tr><tr><td style="text-align: center;"><img src="legend/Casestudyareas_1_LatePrehistoricBurialTumuliinEastBosnia4.png" /></td><td>Late Prehistoric Burial Tumuli in East Bosnia</td></tr></table>': layer_Casestudyareas_1,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+        <script>
+        $(function () {
+            var options = {
+            url: 'originalUrl'};
+                $('.images').viewer(options);
+        });
+
+        </script>
+    </body>
+</html>

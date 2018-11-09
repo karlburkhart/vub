@@ -1,0 +1,105 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+ body {
+   font-family: 'Noto Serif JP', sans-serif;
+   font-size: 14px;
+ }
+
+.gallery-items {
+  cursor: pointer;
+}
+
+ #map {
+     width: 100%;
+     height: 400px;
+     padding: 0;
+     margin-top: -5px;
+ }
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1em;
+  letter-spacing: -1px;
+  padding: 0 0 0 15px;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.padd-left-50 {
+  padding-left: 50px;
+}
+
+.padd-right-50 {
+  padding-right: 50px;
+}
+
+.padd-bottom-50 {
+  padding-bottom: 50px;
+}
+
+.padd-top-50 {
+  padding-top: 50px;
+}
+
+.padd-top-15 {
+  padding-top:15px;
+}
+
+hr {
+  border-color:#ceb12d;
+  border-width: 2px;
+}
+
+.breadcrumb a {
+  color:#ceb12d;
+}
+
+a {
+  color:#ceb12d;
+}
+.dropdown-menu a:hover{
+  color:#ceb12d;
+  background-color:white;
+}
+
+.dropdown-menu a:active{
+  color:#ceb12d;
+  background-color:white;
+}
+
+.dropdown-menu .active {
+  color:#ceb12d;
+  background-color:white;
+}
+
+.navbar-brand span
+{
+  color:#ceb12d;
+}
+
+.staff a:hover{
+  color:#ceb12d;
+}
+.card-footer a:hover{
+  color:#ceb12d;
+}
